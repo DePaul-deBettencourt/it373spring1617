@@ -1,0 +1,71 @@
+jdebettencourt:~/workspace $ cd code/doubler
+jdebettencourt:~/workspace/code/doubler (master) $ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0   1108     0 ?        Ss   15:48   0:00 /mnt/shared/sbin/tini -- /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbea
+root           9  0.0  0.0   4056   184 ?        S+   15:48   0:00 /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbear -i -s -m -R
+ubuntu       484  0.0  0.0 133576  4528 ?        Ss   15:48   0:02 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_822 export
+ubuntu       494  0.0  0.0  11252  2672 pts/1    Ss   15:48   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu       495  0.0  0.0  29072 12788 pts/1    S+   15:48   0:00 bash -l
+ubuntu      1675  0.0  0.0  11252  2608 pts/3    Ss   15:49   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      1676  0.0  0.0  29024 12812 pts/3    S+   15:49   0:00 bash -l
+ubuntu      2253  0.0  0.0  11252  2720 pts/5    Ss   16:20   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      2254  0.0  0.0  29024 12780 pts/5    S+   16:20   0:00 bash -l
+ubuntu      2746  0.0  0.0  11252  2656 pts/7    Ss   16:28   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      2748  0.0  0.0  29024 12848 pts/7    S    16:28   0:00 bash -l
+ubuntu      3229  0.0  0.0  11252  2772 pts/9    Ss   16:31   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      3230  0.0  0.0  29024 12720 pts/9    S    16:31   0:00 bash -l
+ubuntu      3764 22.6  0.0   6368   692 pts/7    R+   16:40  14:36 ./vuln_cpu V1
+ubuntu      3766 22.3  0.0   6368   748 pts/9    R+   16:40  14:24 ./vuln_cpu V 2
+root        3935  0.0  0.0  19380  2164 ?        Rs   17:20   0:00 /mnt/shared/sbin/dropbear -i -s -m -R
+ubuntu      3936  0.1  0.0 1261816 51480 ?       Sl   17:20   0:01 vfs-worker {"pingInterval":5000,"nodePath":"/mnt/shared/lib/node_modules","tmuxBi
+ubuntu      4006  0.0  0.0 123740  2632 pts/0    Ss+  17:20   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 attach -t jdebettencourt@it373try2_200 -d
+ubuntu      4826  0.0  0.0 123740  2756 pts/2    Ss+  17:21   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_114 export
+ubuntu      4828  0.0  0.0  11252  2656 pts/4    Ss   17:21   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      4830  0.0  0.0  29024 12836 pts/4    S    17:21   0:00 bash -l
+ubuntu      5320  0.0  0.0  58236 28124 pts/4    S+   17:33   0:00 gdb
+ubuntu      5326  0.0  0.0   4196   652 pts/4    t    17:36   0:00 /home/ubuntu/workspace/code/doubler/quad
+ubuntu      5338  0.0  0.0 123740  2624 pts/6    Ss+  17:44   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_567 export
+ubuntu      5340  0.0  0.0  11252  2604 pts/8    Ss   17:44   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      5341  0.7  0.0  29024 12888 pts/8    S    17:44   0:00 bash -l
+ubuntu      5796  0.0  0.0  17256  2456 pts/8    R+   17:44   0:00 ps aux
+jdebettencourt:~/workspace/code/doubler (master) $ cat /proc/5326/maps
+00400000-00401000 r-xp 00000000 00:2c9 642                               /home/ubuntu/workspace/code/doubler/quad
+00600000-00601000 r--p 00000000 00:2c9 642                               /home/ubuntu/workspace/code/doubler/quad
+00601000-00602000 rw-p 00001000 00:2c9 642                               /home/ubuntu/workspace/code/doubler/quad
+7ffff7a15000-7ffff7bcf000 r-xp 00000000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7ffff7bcf000-7ffff7dcf000 ---p 001ba000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7ffff7dcf000-7ffff7dd3000 r--p 001ba000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7ffff7dd3000-7ffff7dd5000 rw-p 001be000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7ffff7dd5000-7ffff7dda000 rw-p 00000000 00:00 0 
+7ffff7dda000-7ffff7dfd000 r-xp 00000000 00:2c9 72                        /lib/x86_64-linux-gnu/ld-2.19.so
+7ffff7fe4000-7ffff7fe7000 rw-p 00000000 00:00 0 
+7ffff7ff6000-7ffff7ff8000 rw-p 00000000 00:00 0 
+7ffff7ff8000-7ffff7ffa000 r--p 00000000 00:00 0                          [vvar]
+7ffff7ffa000-7ffff7ffc000 r-xp 00000000 00:00 0                          [vdso]
+7ffff7ffc000-7ffff7ffd000 r--p 00022000 00:2c9 72                        /lib/x86_64-linux-gnu/ld-2.19.so
+7ffff7ffd000-7ffff7ffe000 rw-p 00023000 00:2c9 72                        /lib/x86_64-linux-gnu/ld-2.19.so
+7ffff7ffe000-7ffff7fff000 rw-p 00000000 00:00 0 
+7ffffffde000-7ffffffff000 rw-p 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+jdebettencourt:~/workspace/code/doubler (master) $ kill 3766
+jdebettencourt:~/workspace/code/doubler (master) $ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0   1108     0 ?        Ss   15:48   0:00 /mnt/shared/sbin/tini -- /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbear -i -s -m -R
+root           9  0.0  0.0   4056   148 ?        S+   15:48   0:00 /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbear -i -s -m -R
+ubuntu       484  0.0  0.0 133748  4744 ?        Ss   15:48   0:05 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_822 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu      3229  0.0  0.0  11252  2772 pts/9    Ss   16:31   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      3230  0.0  0.0  29024 12720 pts/9    S    16:31   0:00 bash -l
+ubuntu      5340  0.0  0.0  11252  2604 pts/8    Ss   17:44   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      5341  0.0  0.0  29024 12888 pts/8    S    17:44   0:00 bash -l
+root        6025  0.0  0.0  19380  2104 ?        Ss   18:49   0:00 /mnt/shared/sbin/dropbear -i -s -m -R
+ubuntu      6026  0.1  0.0 1290324 44680 ?       Sl   18:49   0:02 vfs-worker {"pingInterval":5000,"nodePath":"/mnt/shared/lib/node_modules","tmuxBin":"/mnt/shared/sbin/tmux","root":"/","debug":true,"connectionTimeout":
+ubuntu      7932  0.0  0.0 123740  2696 pts/1    Ss+  19:27   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 attach -t jdebettencourt@it373try2_122 -d
+ubuntu      7962  0.0  0.0 123740  2624 pts/2    Ss+  19:29   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 attach -t jdebettencourt@it373try2_567 -d
+ubuntu      8005  1.6  0.0  29028 12872 pts/9    S    19:30   0:00 bash -l
+ubuntu      8460  1.5  0.0  29028 12860 pts/9    S    19:30   0:00 bash -l
+ubuntu      8915  2.3  0.0  29028 12868 pts/9    S    19:30   0:00 bash -l
+ubuntu      9374  3.0  0.0  29028 12792 pts/9    S    19:30   0:00 bash -l
+ubuntu      9829  7.5  0.0  29028 12924 pts/9    S    19:30   0:00 bash -l
+ubuntu     10333 22.0  0.0  29028 12760 pts/9    S+   19:30   0:00 bash -l
+ubuntu     10583  0.0  0.0  17256  2456 pts/8    R+   19:30   0:00 ps aux
+jdebettencourt:~/workspace/code/doubler (master) $ 

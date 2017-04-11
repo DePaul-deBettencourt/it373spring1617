@@ -1,0 +1,393 @@
+jdebettencourt:~/workspace $ cd code/code.intro
+jdebettencourt:~/workspace/code/code.intro (master) $ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0   1108     4 ?        Ss   15:48   0:00 /mnt/shared/sbin/tini -- /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbear -i -s -m -R
+root           9  0.0  0.0   4056   184 ?        S+   15:48   0:00 /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbear -i -s -m -R
+root         275  0.0  0.0  19380  2156 ?        Rs   15:48   0:00 /mnt/shared/sbin/dropbear -i -s -m -R
+ubuntu       276  0.1  0.1 1257552 55420 ?       Rl   15:48   0:02 vfs-worker {"pingInterval":5000,"nodePath":"/mnt/shared/lib/node_modules","tmuxBin":"/mnt/shared/sbin/tmux","root":"/","debug":true,"connectionTimeout":
+ubuntu       477  0.0  0.0 123740  2648 pts/0    Ss+  15:48   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_822 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu       484  0.0  0.0 132648  3628 ?        Rs   15:48   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_822 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu       494  0.0  0.0  11252  2688 pts/1    Ss   15:48   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu       495  0.0  0.0  29072 12828 pts/1    S    15:48   0:00 bash -l
+ubuntu      1673  0.0  0.0 123740  2664 pts/2    Ss+  15:49   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_200 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu      1675  0.0  0.0  11252  2624 pts/3    Ss   15:49   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      1676  0.0  0.0  29024 12852 pts/3    S    15:49   0:00 bash -l
+ubuntu      2193 99.3  0.0   6368   752 pts/1    R+   16:10   0:27 ./cpu Tony the Tiger
+ubuntu      2204  0.0  0.0  17256  2528 pts/3    R+   16:11   0:00 ps aux
+jdebettencourt:~/workspace/code/code.intro (master) $ cat pid/2193/maps
+cat: pid/2193/maps: No such file or directory
+jdebettencourt:~/workspace/code/code.intro (master) $ cat proc/2193/maps
+cat: proc/2193/maps: No such file or directory
+jdebettencourt:~/workspace/code/code.intro (master) $ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0   1108     4 ?        Ss   15:48   0:00 /mnt/shared/sbin/tini -- /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbear -i -s -m -R
+root           9  0.0  0.0   4056   184 ?        S+   15:48   0:00 /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbear -i -s -m -R
+root         275  0.0  0.0  19380  2156 ?        Rs   15:48   0:00 /mnt/shared/sbin/dropbear -i -s -m -R
+ubuntu       276  0.1  0.1 1258576 56740 ?       Sl   15:48   0:02 vfs-worker {"pingInterval":5000,"nodePath":"/mnt/shared/lib/node_modules","tmuxBin":"/mnt/shared/sbin/tmux","root":"/","debug":true,"connectionTimeout":
+ubuntu       477  0.0  0.0 123740  2648 pts/0    Ss+  15:48   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_822 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu       484  0.0  0.0 132648  3628 ?        Rs   15:48   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_822 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu       494  0.0  0.0  11252  2688 pts/1    Ss   15:48   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu       495  0.0  0.0  29072 12828 pts/1    S    15:48   0:00 bash -l
+ubuntu      1673  0.0  0.0 123740  2664 pts/2    Ss+  15:49   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_200 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu      1675  0.0  0.0  11252  2624 pts/3    Ss   15:49   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      1676  0.0  0.0  29024 12852 pts/3    S    15:49   0:00 bash -l
+ubuntu      2193 99.7  0.0   6368   752 pts/1    R+   16:10   7:52 ./cpu Tony the Tiger
+ubuntu      2221  0.0  0.0  17256  2460 pts/3    R+   16:18   0:00 ps aux
+jdebettencourt:~/workspace/code/code.intro (master) $ sudo cat proc/2193/maps
+cat: proc/2193/maps: No such file or directory
+jdebettencourt:~/workspace/code/code.intro (master) $ pmap 2193
+2193:   ./cpu Tony the Tiger
+0000000000400000      4K r-x-- cpu
+0000000000601000      4K r---- cpu
+0000000000602000      4K rw--- cpu
+00007ff01313f000   1768K r-x-- libc-2.19.so
+00007ff0132f9000   2048K ----- libc-2.19.so
+00007ff0134f9000     16K r---- libc-2.19.so
+00007ff0134fd000      8K rw--- libc-2.19.so
+00007ff0134ff000     20K rw---   [ anon ]
+00007ff013504000    100K r-x-- libpthread-2.19.so
+00007ff01351d000   2044K ----- libpthread-2.19.so
+00007ff01371c000      4K r---- libpthread-2.19.so
+00007ff01371d000      4K rw--- libpthread-2.19.so
+00007ff01371e000     16K rw---   [ anon ]
+00007ff013722000    140K r-x-- ld-2.19.so
+00007ff013930000     12K rw---   [ anon ]
+00007ff013941000     12K rw---   [ anon ]
+00007ff013944000      4K r---- ld-2.19.so
+00007ff013945000      4K rw--- ld-2.19.so
+00007ff013946000      4K rw---   [ anon ]
+00007ffd3d785000    132K rw---   [ stack ]
+00007ffd3d7b1000      8K r----   [ anon ]
+00007ffd3d7b3000      8K r-x--   [ anon ]
+ffffffffff600000      4K r-x--   [ anon ]
+ total             6368K
+jdebettencourt:~/workspace/code/code.intro (master) $ cat /proc/2193/maps
+00400000-00401000 r-xp 00000000 00:2c9 566                               /home/ubuntu/workspace/code/code.intro/cpu
+00601000-00602000 r--p 00001000 00:2c9 566                               /home/ubuntu/workspace/code/code.intro/cpu
+00602000-00603000 rw-p 00002000 00:2c9 566                               /home/ubuntu/workspace/code/code.intro/cpu
+7ff01313f000-7ff0132f9000 r-xp 00000000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7ff0132f9000-7ff0134f9000 ---p 001ba000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7ff0134f9000-7ff0134fd000 r--p 001ba000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7ff0134fd000-7ff0134ff000 rw-p 001be000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7ff0134ff000-7ff013504000 rw-p 00000000 00:00 0
+7ff013504000-7ff01351d000 r-xp 00000000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7ff01351d000-7ff01371c000 ---p 00019000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7ff01371c000-7ff01371d000 r--p 00018000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7ff01371d000-7ff01371e000 rw-p 00019000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7ff01371e000-7ff013722000 rw-p 00000000 00:00 0
+7ff013722000-7ff013745000 r-xp 00000000 00:2c9 72                        /lib/x86_64-linux-gnu/ld-2.19.so
+7ff013930000-7ff013933000 rw-p 00000000 00:00 0
+7ff013941000-7ff013944000 rw-p 00000000 00:00 0
+7ff013944000-7ff013945000 r--p 00022000 00:2c9 72                        /lib/x86_64-linux-gnu/ld-2.19.so
+7ff013945000-7ff013946000 rw-p 00023000 00:2c9 72                        /lib/x86_64-linux-gnu/ld-2.19.so
+7ff013946000-7ff013947000 rw-p 00000000 00:00 0
+7ffd3d785000-7ffd3d7a6000 rw-p 00000000 00:00 0                          [stack]
+7ffd3d7b1000-7ffd3d7b3000 r--p 00000000 00:00 0                          [vvar]
+7ffd3d7b3000-7ffd3d7b5000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+jdebettencourt:~/workspace/code/code.intro (master) $ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0   1108     4 ?        Ss   15:48   0:00 /mnt/shared/sbin/tini -- /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbear -i -s -m -R
+root           9  0.0  0.0   4056   184 ?        S+   15:48   0:00 /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbear -i -s -m -R
+root         275  0.0  0.0  19380  2156 ?        Rs   15:48   0:00 /mnt/shared/sbin/dropbear -i -s -m -R
+ubuntu       276  0.1  0.1 1266772 57480 ?       Rl   15:48   0:02 vfs-worker {"pingInterval":5000,"nodePath":"/mnt/shared/lib/node_modules","tmuxBin":"/mnt/shared/sbin/tmux","root":"/","debug":true,"connectionTimeout":
+ubuntu       477  0.0  0.0 123740  2648 pts/0    Ss+  15:48   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_822 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu       484  0.0  0.0 132812  3752 ?        Rs   15:48   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_822 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu       494  0.0  0.0  11252  2688 pts/1    Ss   15:48   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu       495  0.0  0.0  29072 12828 pts/1    S    15:48   0:00 bash -l
+ubuntu      1673  0.0  0.0 123740  2664 pts/2    Ss+  15:49   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_200 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu      1675  0.0  0.0  11252  2624 pts/3    Ss   15:49   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      1676  0.0  0.0  29024 12852 pts/3    S    15:49   0:00 bash -l
+ubuntu      2193 99.0  0.0   6368   752 pts/1    R+   16:10  10:58 ./cpu Tony the Tiger
+ubuntu      2251  0.0  0.0 123740  2664 pts/4    Ss+  16:20   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_24 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattach
+ubuntu      2253  0.0  0.0  11252  2736 pts/5    Ss   16:20   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      2254  0.4  0.0  29024 12820 pts/5    S    16:20   0:00 bash -l
+ubuntu      2710 71.8  0.0   6368   728 pts/5    R+   16:21   0:11 ./cpu Dory
+ubuntu      2713  0.0  0.0  17256  2460 pts/3    R+   16:21   0:00 ps aux
+jdebettencourt:~/workspace/code/code.intro (master) $ proc 2193
+bash: proc: command not found
+jdebettencourt:~/workspace/code/code.intro (master) $ pmap 2193
+2193:   ./cpu Tony the Tiger
+0000000000400000      4K r-x-- cpu
+0000000000601000      4K r---- cpu
+0000000000602000      4K rw--- cpu
+00007ff01313f000   1768K r-x-- libc-2.19.so
+00007ff0132f9000   2048K ----- libc-2.19.so
+00007ff0134f9000     16K r---- libc-2.19.so
+00007ff0134fd000      8K rw--- libc-2.19.so
+00007ff0134ff000     20K rw---   [ anon ]
+00007ff013504000    100K r-x-- libpthread-2.19.so
+00007ff01351d000   2044K ----- libpthread-2.19.so
+00007ff01371c000      4K r---- libpthread-2.19.so
+00007ff01371d000      4K rw--- libpthread-2.19.so
+00007ff01371e000     16K rw---   [ anon ]
+00007ff013722000    140K r-x-- ld-2.19.so
+00007ff013930000     12K rw---   [ anon ]
+00007ff013941000     12K rw---   [ anon ]
+00007ff013944000      4K r---- ld-2.19.so
+00007ff013945000      4K rw--- ld-2.19.so
+00007ff013946000      4K rw---   [ anon ]
+00007ffd3d785000    132K rw---   [ stack ]
+00007ffd3d7b1000      8K r----   [ anon ]
+00007ffd3d7b3000      8K r-x--   [ anon ]
+ffffffffff600000      4K r-x--   [ anon ]
+ total             6368K
+jdebettencourt:~/workspace/code/code.intro (master) $ pmap 2710
+2710:   ./cpu Dory
+0000000000400000      4K r-x-- cpu
+0000000000601000      4K r---- cpu
+0000000000602000      4K rw--- cpu
+00007fa62d8b5000   1768K r-x-- libc-2.19.so
+00007fa62da6f000   2048K ----- libc-2.19.so
+00007fa62dc6f000     16K r---- libc-2.19.so
+00007fa62dc73000      8K rw--- libc-2.19.so
+00007fa62dc75000     20K rw---   [ anon ]
+00007fa62dc7a000    100K r-x-- libpthread-2.19.so
+00007fa62dc93000   2044K ----- libpthread-2.19.so
+00007fa62de92000      4K r---- libpthread-2.19.so
+00007fa62de93000      4K rw--- libpthread-2.19.so
+00007fa62de94000     16K rw---   [ anon ]
+00007fa62de98000    140K r-x-- ld-2.19.so
+00007fa62e0a6000     12K rw---   [ anon ]
+00007fa62e0b7000     12K rw---   [ anon ]
+00007fa62e0ba000      4K r---- ld-2.19.so
+00007fa62e0bb000      4K rw--- ld-2.19.so
+00007fa62e0bc000      4K rw---   [ anon ]
+00007ffcb8939000    132K rw---   [ stack ]
+00007ffcb89aa000      8K r----   [ anon ]
+00007ffcb89ac000      8K r-x--   [ anon ]
+ffffffffff600000      4K r-x--   [ anon ]
+ total             6368K
+jdebettencourt:~/workspace/code/code.intro (master) $ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0   1108     4 ?        Ss   15:48   0:00 /mnt/shared/sbin/tini -- /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbear -i -s -m -R
+root           9  0.0  0.0   4056   184 ?        S+   15:48   0:00 /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbear -i -s -m -R
+root         275  0.0  0.0  19380  2156 ?        Ss   15:48   0:00 /mnt/shared/sbin/dropbear -i -s -m -R
+ubuntu       276  0.1  0.0 1274972 47100 ?       Sl   15:48   0:03 vfs-worker {"pingInterval":5000,"nodePath":"/mnt/shared/lib/node_modules","tmuxBin":"/mnt/shared/sbin/tmux","root":"/","debug":true,"connectionTimeout":
+ubuntu       477  0.0  0.0 123740  2648 pts/0    Ss+  15:48   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_822 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu       484  0.0  0.0 133164  4136 ?        Ss   15:48   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_822 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu       494  0.0  0.0  11252  2688 pts/1    Ss   15:48   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu       495  0.0  0.0  29072 12828 pts/1    S    15:48   0:00 bash -l
+ubuntu      1673  0.0  0.0 123740  2664 pts/2    Ss+  15:49   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_200 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu      1675  0.0  0.0  11252  2624 pts/3    Ss   15:49   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      1676  0.0  0.0  29024 12852 pts/3    S    15:49   0:00 bash -l
+ubuntu      2193 83.6  0.0   6368   752 pts/1    R+   16:10  18:03 ./cpu Tony the Tiger
+ubuntu      2251  0.0  0.0 123740  2664 pts/4    Ss+  16:20   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_24 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattach
+ubuntu      2253  0.0  0.0  11252  2736 pts/5    Ss   16:20   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      2254  0.0  0.0  29024 12820 pts/5    S    16:20   0:00 bash -l
+ubuntu      2710 67.3  0.0   6368   728 pts/5    R+   16:21   7:15 ./cpu Dory
+ubuntu      2744  0.0  0.0 123740  2720 pts/6    Ss+  16:28   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_19 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattach
+ubuntu      2746  0.0  0.0  11252  2672 pts/7    Ss   16:28   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      2748  0.1  0.0  29024 12888 pts/7    S    16:28   0:00 bash -l
+ubuntu      3225 43.8  0.0   6368   864 pts/7    R+   16:31   0:25 ./vuln_cpu Vuln 1
+ubuntu      3227  0.0  0.0 123740  2724 pts/8    Ss+  16:31   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_122 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu      3229  0.0  0.0  11252  2796 pts/9    Ss   16:31   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      3230  0.3  0.0  29024 12760 pts/9    S    16:31   0:00 bash -l
+ubuntu      3685 35.0  0.0   6368   680 pts/9    R+   16:31   0:04 ./vuln_cpu Vuln 2
+ubuntu      3687  0.0  0.0  17256  2460 pts/3    R+   16:32   0:00 ps aux
+jdebettencourt:~/workspace/code/code.intro (master) $ pmap 3225
+3225:   ./vuln_cpu Vuln 1
+0000000000400000      4K r-x-- vuln_cpu
+0000000000601000      4K r-x-- vuln_cpu
+0000000000602000      4K rwx-- vuln_cpu
+00007fe0fb9c3000   1768K r-x-- libc-2.19.so
+00007fe0fbb7d000   2048K ----- libc-2.19.so
+00007fe0fbd7d000     16K r-x-- libc-2.19.so
+00007fe0fbd81000      8K rwx-- libc-2.19.so
+00007fe0fbd83000     20K rwx--   [ anon ]
+00007fe0fbd88000    100K r-x-- libpthread-2.19.so
+00007fe0fbda1000   2044K ----- libpthread-2.19.so
+00007fe0fbfa0000      4K r-x-- libpthread-2.19.so
+00007fe0fbfa1000      4K rwx-- libpthread-2.19.so
+00007fe0fbfa2000     16K rwx--   [ anon ]
+00007fe0fbfa6000    140K r-x-- ld-2.19.so
+00007fe0fc1b4000     12K rwx--   [ anon ]
+00007fe0fc1c5000     12K rwx--   [ anon ]
+00007fe0fc1c8000      4K r-x-- ld-2.19.so
+00007fe0fc1c9000      4K rwx-- ld-2.19.so
+00007fe0fc1ca000      4K rwx--   [ anon ]
+00007ffe7dc57000    132K rwx--   [ stack ]
+00007ffe7dda0000      8K r----   [ anon ]
+00007ffe7dda2000      8K r-x--   [ anon ]
+ffffffffff600000      4K r-x--   [ anon ]
+ total             6368K
+jdebettencourt:~/workspace/code/code.intro (master) $ pmap 3685
+3685:   ./vuln_cpu Vuln 2
+0000000000400000      4K r-x-- vuln_cpu
+0000000000601000      4K r-x-- vuln_cpu
+0000000000602000      4K rwx-- vuln_cpu
+00007ffb1c26d000   1768K r-x-- libc-2.19.so
+00007ffb1c427000   2048K ----- libc-2.19.so
+00007ffb1c627000     16K r-x-- libc-2.19.so
+00007ffb1c62b000      8K rwx-- libc-2.19.so
+00007ffb1c62d000     20K rwx--   [ anon ]
+00007ffb1c632000    100K r-x-- libpthread-2.19.so
+00007ffb1c64b000   2044K ----- libpthread-2.19.so
+00007ffb1c84a000      4K r-x-- libpthread-2.19.so
+00007ffb1c84b000      4K rwx-- libpthread-2.19.so
+00007ffb1c84c000     16K rwx--   [ anon ]
+00007ffb1c850000    140K r-x-- ld-2.19.so
+00007ffb1ca5e000     12K rwx--   [ anon ]
+00007ffb1ca6f000     12K rwx--   [ anon ]
+00007ffb1ca72000      4K r-x-- ld-2.19.so
+00007ffb1ca73000      4K rwx-- ld-2.19.so
+00007ffb1ca74000      4K rwx--   [ anon ]
+00007ffcfa35a000    132K rwx--   [ stack ]
+00007ffcfa3d8000      8K r----   [ anon ]
+00007ffcfa3da000      8K r-x--   [ anon ]
+ffffffffff600000      4K r-x--   [ anon ]
+ total             6368K
+jdebettencourt:~/workspace/code/code.intro (master) $ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0   1108     4 ?        Ss   15:48   0:00 /mnt/shared/sbin/tini -- /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbear -i -s -m -R
+root           9  0.0  0.0   4056   184 ?        S+   15:48   0:00 /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbear -i -s -m -R
+root         275  0.0  0.0  19380  2156 ?        Ss   15:48   0:00 /mnt/shared/sbin/dropbear -i -s -m -R
+ubuntu       276  0.1  0.0 1274972 47720 ?       Sl   15:48   0:04 vfs-worker {"pingInterval":5000,"nodePath":"/mnt/shared/lib/node_modules","tmuxBin":"/mnt/shared/sbin/tmux","root":"/","debug":true,"connectionTimeout":
+ubuntu       477  0.0  0.0 123740  2648 pts/0    Ss+  15:48   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_822 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu       484  0.0  0.0 133320  4132 ?        Rs   15:48   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_822 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu       494  0.0  0.0  11252  2688 pts/1    Ss   15:48   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu       495  0.0  0.0  29072 12828 pts/1    S+   15:48   0:00 bash -l
+ubuntu      1673  0.0  0.0 123740  2664 pts/2    Ss+  15:49   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_200 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu      1675  0.0  0.0  11252  2624 pts/3    Ss   15:49   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      1676  0.0  0.0  29024 12852 pts/3    S    15:49   0:00 bash -l
+ubuntu      2251  0.0  0.0 123740  2664 pts/4    Ss+  16:20   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_24 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattach
+ubuntu      2253  0.0  0.0  11252  2736 pts/5    Ss   16:20   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      2254  0.0  0.0  29024 12820 pts/5    S+   16:20   0:00 bash -l
+ubuntu      2744  0.0  0.0 123740  2720 pts/6    Ss+  16:28   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_19 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattach
+ubuntu      2746  0.0  0.0  11252  2672 pts/7    Ss   16:28   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      2748  0.0  0.0  29024 12888 pts/7    S    16:28   0:00 bash -l
+ubuntu      3227  0.0  0.0 123740  2724 pts/8    Ss+  16:31   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_122 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu      3229  0.0  0.0  11252  2788 pts/9    Ss   16:31   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      3230  0.0  0.0  29024 12760 pts/9    S    16:31   0:00 bash -l
+ubuntu      3764 55.2  0.0   6368   700 pts/7    R+   16:40   0:18 ./vuln_cpu V1
+ubuntu      3766 35.2  0.0   6368   748 pts/9    R+   16:40   0:04 ./vuln_cpu V 2
+ubuntu      3768  0.0  0.0  17256  2460 pts/3    R+   16:40   0:00 ps aux
+jdebettencourt:~/workspace/code/code.intro (master) $ cat /proc/3764/maps
+00400000-00401000 r-xp 00000000 00:2c9 625                               /home/ubuntu/workspace/code/code.intro/vuln_cpu
+00601000-00602000 r-xp 00001000 00:2c9 625                               /home/ubuntu/workspace/code/code.intro/vuln_cpu
+00602000-00603000 rwxp 00002000 00:2c9 625                               /home/ubuntu/workspace/code/code.intro/vuln_cpu
+7f3db7d6b000-7f3db7f25000 r-xp 00000000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7f3db7f25000-7f3db8125000 ---p 001ba000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7f3db8125000-7f3db8129000 r-xp 001ba000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7f3db8129000-7f3db812b000 rwxp 001be000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7f3db812b000-7f3db8130000 rwxp 00000000 00:00 0
+7f3db8130000-7f3db8149000 r-xp 00000000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f3db8149000-7f3db8348000 ---p 00019000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f3db8348000-7f3db8349000 r-xp 00018000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f3db8349000-7f3db834a000 rwxp 00019000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f3db834a000-7f3db834e000 rwxp 00000000 00:00 0
+7f3db834e000-7f3db8371000 r-xp 00000000 00:2c9 72                        /lib/x86_64-linux-gnu/ld-2.19.so
+7f3db855c000-7f3db855f000 rwxp 00000000 00:00 0
+7f3db856d000-7f3db8570000 rwxp 00000000 00:00 0
+7f3db8570000-7f3db8571000 r-xp 00022000 00:2c9 72                        /lib/x86_64-linux-gnu/ld-2.19.so
+7f3db8571000-7f3db8572000 rwxp 00023000 00:2c9 72                        /lib/x86_64-linux-gnu/ld-2.19.so
+7f3db8572000-7f3db8573000 rwxp 00000000 00:00 0
+7ffecafad000-7ffecafce000 rwxp 00000000 00:00 0                          [stack]
+7ffecaff9000-7ffecaffb000 r--p 00000000 00:00 0                          [vvar]
+7ffecaffb000-7ffecaffd000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+jdebettencourt:~/workspace/code/code.intro (master) $ cat /proc/3764/maps
+00400000-00401000 r-xp 00000000 00:2c9 625                               /home/ubuntu/workspace/code/code.intro/vuln_cpu
+00601000-00602000 r-xp 00001000 00:2c9 625                               /home/ubuntu/workspace/code/code.intro/vuln_cpu
+00602000-00603000 rwxp 00002000 00:2c9 625                               /home/ubuntu/workspace/code/code.intro/vuln_cpu
+7f3db7d6b000-7f3db7f25000 r-xp 00000000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7f3db7f25000-7f3db8125000 ---p 001ba000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7f3db8125000-7f3db8129000 r-xp 001ba000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7f3db8129000-7f3db812b000 rwxp 001be000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7f3db812b000-7f3db8130000 rwxp 00000000 00:00 0
+7f3db8130000-7f3db8149000 r-xp 00000000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f3db8149000-7f3db8348000 ---p 00019000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f3db8348000-7f3db8349000 r-xp 00018000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f3db8349000-7f3db834a000 rwxp 00019000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f3db834a000-7f3db834e000 rwxp 00000000 00:00 0
+7f3db834e000-7f3db8371000 r-xp 00000000 00:2c9 72                        /lib/x86_64-linux-gnu/ld-2.19.so
+7f3db855c000-7f3db855f000 rwxp 00000000 00:00 0
+7f3db856d000-7f3db8570000 rwxp 00000000 00:00 0
+7f3db8570000-7f3db8571000 r-xp 00022000 00:2c9 72                        /lib/x86_64-linux-gnu/ld-2.19.so
+7f3db8571000-7f3db8572000 rwxp 00023000 00:2c9 72                        /lib/x86_64-linux-gnu/ld-2.19.so
+7f3db8572000-7f3db8573000 rwxp 00000000 00:00 0
+7ffecafad000-7ffecafce000 rwxp 00000000 00:00 0                          [stack]
+7ffecaff9000-7ffecaffb000 r--p 00000000 00:00 0                          [vvar]
+7ffecaffb000-7ffecaffd000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+jdebettencourt:~/workspace/code/code.intro (master) $ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0   1108     0 ?        Ss   15:48   0:00 /mnt/shared/sbin/tini -- /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbea
+root           9  0.0  0.0   4056   148 ?        S+   15:48   0:00 /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbear -i -s -m -R
+ubuntu       484  0.0  0.0 133748  4704 ?        Rs   15:48   0:03 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_822 export
+ubuntu       494  0.0  0.0  11252  2672 pts/1    Ss   15:48   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu       495  0.0  0.0  29072 12788 pts/1    S+   15:48   0:00 bash -l
+ubuntu      1675  0.0  0.0  11252  2608 pts/3    Ss   15:49   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      1676  0.0  0.0  29024 12812 pts/3    S    15:49   0:00 bash -l
+ubuntu      2253  0.0  0.0  11252  2720 pts/5    Ss   16:20   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      2254  0.0  0.0  29024 12780 pts/5    S+   16:20   0:00 bash -l
+ubuntu      2746  0.0  0.0  11252  2656 pts/7    Ss   16:28   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      2748  0.0  0.0  29024 12848 pts/7    S    16:28   0:00 bash -l
+ubuntu      3229  0.0  0.0  11252  2772 pts/9    Ss   16:31   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      3230  0.0  0.0  29024 12720 pts/9    S    16:31   0:00 bash -l
+ubuntu      3764 21.7  0.0   6368   692 pts/7    R+   16:40  20:38 ./vuln_cpu V1
+ubuntu      3766 21.6  0.0   6368   748 pts/9    R+   16:40  20:24 ./vuln_cpu V 2
+root        3935  0.0  0.0  19380  2164 ?        Ss   17:20   0:00 /mnt/shared/sbin/dropbear -i -s -m -R
+ubuntu      3936  0.0  0.0 1287644 53548 ?       Rl   17:20   0:02 vfs-worker {"pingInterval":5000,"nodePath":"/mnt/shared/lib/node_modules","tmuxBi
+ubuntu      4006  0.0  0.0 123740  2616 pts/0    Ss+  17:20   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 attach -t jdebettencourt@it373try2_200 -d
+ubuntu      4826  0.0  0.0 123740  2756 pts/2    Ss+  17:21   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_114 export
+ubuntu      4828  0.0  0.0  11252  2656 pts/4    Ss   17:21   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      4830  0.0  0.0  29024 12836 pts/4    S    17:21   0:00 bash -l
+ubuntu      5320  0.0  0.0  58236 21352 pts/4    S+   17:33   0:00 gdb
+ubuntu      5326  0.0  0.0   4196   652 pts/4    t    17:36   0:00 /home/ubuntu/workspace/code/doubler/quad
+ubuntu      5338  0.0  0.0 123740  2608 pts/6    Ss+  17:44   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_567 export
+ubuntu      5340  0.0  0.0  11252  2604 pts/8    Ss   17:44   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      5341  0.0  0.0  29024 12888 pts/8    S+   17:44   0:00 bash -l
+ubuntu      5816  0.0  0.0 123740  2716 pts/10   Ss+  18:14   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 attach -t jdebettencourt@it373try2_122 -d
+ubuntu      5822  0.0  0.0 123740  2692 pts/11   Ss+  18:14   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 attach -t jdebettencourt@it373try2_19 -d
+ubuntu      5830  0.0  0.0 123740  2636 pts/12   Ss+  18:14   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 attach -t jdebettencourt@it373try2_24 -d
+ubuntu      5838  0.0  0.0  17256  2456 pts/3    R+   18:14   0:00 ps aux
+jdebettencourt:~/workspace/code/code.intro (master) $ cat /proc/3764/maps
+00400000-00401000 r-xp 00000000 00:2c9 625                               /home/ubuntu/workspace/code/code.intro/vuln_cpu
+00601000-00602000 r-xp 00001000 00:2c9 625                               /home/ubuntu/workspace/code/code.intro/vuln_cpu
+00602000-00603000 rwxp 00002000 00:2c9 625                               /home/ubuntu/workspace/code/code.intro/vuln_cpu
+7f3db7d6b000-7f3db7f25000 r-xp 00000000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7f3db7f25000-7f3db8125000 ---p 001ba000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7f3db8125000-7f3db8129000 r-xp 001ba000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7f3db8129000-7f3db812b000 rwxp 001be000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7f3db812b000-7f3db8130000 rwxp 00000000 00:00 0
+7f3db8130000-7f3db8149000 r-xp 00000000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f3db8149000-7f3db8348000 ---p 00019000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f3db8348000-7f3db8349000 r-xp 00018000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f3db8349000-7f3db834a000 rwxp 00019000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f3db834a000-7f3db834e000 rwxp 00000000 00:00 0 
+7f3db834e000-7f3db8371000 r-xp 00000000 00:2c9 72                        /lib/x86_64-linux-gnu/ld-2.19.so
+7f3db855c000-7f3db855f000 rwxp 00000000 00:00 0 
+7f3db856d000-7f3db8570000 rwxp 00000000 00:00 0 
+7f3db8570000-7f3db8571000 r-xp 00022000 00:2c9 72                        /lib/x86_64-linux-gnu/ld-2.19.so
+7f3db8571000-7f3db8572000 rwxp 00023000 00:2c9 72                        /lib/x86_64-linux-gnu/ld-2.19.so
+7f3db8572000-7f3db8573000 rwxp 00000000 00:00 0 
+7ffecafad000-7ffecafce000 rwxp 00000000 00:00 0                          [stack]
+7ffecaff9000-7ffecaffb000 r--p 00000000 00:00 0                          [vvar]
+7ffecaffb000-7ffecaffd000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+jdebettencourt:~/workspace/code/code.intro (master) $ cat /proc/3766/maps                                                                           
+00400000-00401000 r-xp 00000000 00:2c9 625                               /home/ubuntu/workspace/code/code.intro/vuln_cpu
+00601000-00602000 r-xp 00001000 00:2c9 625                               /home/ubuntu/workspace/code/code.intro/vuln_cpu
+00602000-00603000 rwxp 00002000 00:2c9 625                               /home/ubuntu/workspace/code/code.intro/vuln_cpu
+7f975712f000-7f97572e9000 r-xp 00000000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7f97572e9000-7f97574e9000 ---p 001ba000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7f97574e9000-7f97574ed000 r-xp 001ba000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7f97574ed000-7f97574ef000 rwxp 001be000 00:2c9 79                        /lib/x86_64-linux-gnu/libc-2.19.so
+7f97574ef000-7f97574f4000 rwxp 00000000 00:00 0 
+7f97574f4000-7f975750d000 r-xp 00000000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f975750d000-7f975770c000 ---p 00019000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f975770c000-7f975770d000 r-xp 00018000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f975770d000-7f975770e000 rwxp 00019000 00:2c9 274                       /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f975770e000-7f9757712000 rwxp 00000000 00:00 0 
+7f9757712000-7f9757735000 r-xp 00000000 00:2c9 72                        /lib/x86_64-linux-gnu/ld-2.19.so
+7f9757920000-7f9757923000 rwxp 00000000 00:00 0 
+7f9757931000-7f9757934000 rwxp 00000000 00:00 0 
+7f9757934000-7f9757935000 r-xp 00022000 00:2c9 72                        /lib/x86_64-linux-gnu/ld-2.19.so
+7f9757935000-7f9757936000 rwxp 00023000 00:2c9 72                        /lib/x86_64-linux-gnu/ld-2.19.so
+7f9757936000-7f9757937000 rwxp 00000000 00:00 0 
+7ffde5452000-7ffde5473000 rwxp 00000000 00:00 0                          [stack]
+7ffde55b7000-7ffde55b9000 r--p 00000000 00:00 0                          [vvar]
+7ffde55b9000-7ffde55bb000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+jdebettencourt:~/workspace/code/code.intro (master) $ 

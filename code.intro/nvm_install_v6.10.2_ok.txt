@@ -1,0 +1,273 @@
+jdebettencourt:~/workspace $ cd code
+jdebettencourt:~/workspace/code (master) $ cd code.intro
+jdebettencourt:~/workspace/code/code.intro (master) $ ./cpu "A"
+bash: ./cpu: Permission denied
+jdebettencourt:~/workspace/code/code.intro (master) $ gcc -o cpu cpu.c -Wall
+/tmp/ccXdERJv.o: In function `Pthread_create':
+cpu.c:(.text+0xe0): undefined reference to `pthread_create'
+/tmp/ccXdERJv.o: In function `Pthread_join':
+cpu.c:(.text+0x127): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+jdebettencourt:~/workspace/code/code.intro (master) $ gcc -o cpu cpu.c -Wall -pthread
+jdebettencourt:~/workspace/code/code.intro (master) $ ./cpu "Tony the Tiger"
+Tony the Tiger
+Tony the Tiger
+...
+Tony the Tiger
+Tony the Tiger
+Tony the Tiger
+^C
+jdebettencourt:~/workspace/code/code.intro (master) $ 'gcc -print-prog-name=cc1' -v                                                                                                                                        
+bash: gcc -print-prog-name=cc1: command not found
+jdebettencourt:~/workspace/code/code.intro (master) $ gcc -print-prog-name=cc1 -v
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper
+/usr/lib/gcc/x86_64-linux-gnu/4.8/cc1
+jdebettencourt:~/workspace/code/code.intro (master) $ whereis glibc
+glibc: /usr/share/man/man7/glibc.7.gz
+jdebettencourt:~/workspace/code/code.intro (master) $ dpkg -L *libc*
+dpkg-query: error: --listfiles needs a valid package name but '*libc*' is not: illegal package name in specifier '*libc*': must start with an alphanumeric character
+
+Use --help for help about querying packages.
+jdebettencourt:~/workspace/code/code.intro (master) $ dpkg -L glibc*
+dpkg-query: error: --listfiles needs a valid package name but 'glibc*' is not: illegal package name in specifier 'glibc*': character `*' not allowed (only letters, digits and characters `-+._')
+
+Use --help for help about querying packages.
+jdebettencourt:~/workspace/code/code.intro (master) $ dpkg -L glibc+
+dpkg-query: package 'glibc+' is not installed
+Use dpkg --info (= dpkg-deb --info) to examine archive files,
+and dpkg --contents (= dpkg-deb --contents) to list their contents.
+jdebettencourt:~/workspace/code/code.intro (master) $ dpkg -L glibc
+dpkg-query: package 'glibc' is not installed
+Use dpkg --info (= dpkg-deb --info) to examine archive files,
+and dpkg --contents (= dpkg-deb --contents) to list their contents.
+jdebettencourt:~/workspace/code/code.intro (master) $ dpkg -L glibc.
+dpkg-query: package 'glibc.' is not installed
+Use dpkg --info (= dpkg-deb --info) to examine archive files,
+and dpkg --contents (= dpkg-deb --contents) to list their contents.
+jdebettencourt:~/workspace/code/code.intro (master) $ dpkg --help
+Usage: dpkg [<option> ...] <command>
+
+Commands:
+  -i|--install       <.deb file name> ... | -R|--recursive <directory> ...
+  --unpack           <.deb file name> ... | -R|--recursive <directory> ...
+  -A|--record-avail  <.deb file name> ... | -R|--recursive <directory> ...
+  --configure        <package> ... | -a|--pending
+  --triggers-only    <package> ... | -a|--pending
+  -r|--remove        <package> ... | -a|--pending
+  -P|--purge         <package> ... | -a|--pending
+  -V|--verify <package> ...        Verify the integrity of package(s).
+  --get-selections [<pattern> ...] Get list of selections to stdout.
+  --set-selections                 Set package selections from stdin.
+  --clear-selections               Deselect every non-essential package.
+  --update-avail <Packages-file>   Replace available packages info.
+  --merge-avail <Packages-file>    Merge with info from file.
+  --clear-avail                    Erase existing available info.
+  --forget-old-unavail             Forget uninstalled unavailable pkgs.
+  -s|--status <package> ...        Display package status details.
+  -p|--print-avail <package> ...   Display available version details.
+  -L|--listfiles <package> ...     List files `owned' by package(s).
+  -l|--list [<pattern> ...]        List packages concisely.
+  -S|--search <pattern> ...        Find package(s) owning file(s).
+  -C|--audit                       Check for broken package(s).
+  --add-architecture <arch>        Add <arch> to the list of architectures.
+  --remove-architecture <arch>     Remove <arch> from the list of architectures.
+  --print-architecture             Print dpkg architecture.
+  --print-foreign-architectures    Print allowed foreign architectures.
+  --compare-versions <a> <op> <b>  Compare version numbers - see below.
+  --force-help                     Show help on forcing.
+  -Dh|--debug=help                 Show help on debugging.
+
+  -?, --help                       Show this help message.
+      --version                    Show the version.
+
+Use dpkg -b|--build|-c|--contents|-e|--control|-I|--info|-f|--field|
+ -x|--extract|-X|--vextract|--fsys-tarfile  on archives (type dpkg-deb --help).
+
+For internal use: dpkg --assert-support-predepends | --predep-package |
+  --assert-working-epoch | --assert-long-filenames | --assert-multi-conrep |
+  --assert-multi-arch.
+
+Options:
+  --admindir=<directory>     Use <directory> instead of /var/lib/dpkg.
+  --root=<directory>         Install on a different root directory.
+  --instdir=<directory>      Change installation dir without changing admin dir.
+  --path-exclude=<pattern>   Do not install paths which match a shell pattern.
+  --path-include=<pattern>   Re-include a pattern after a previous exclusion.
+  -O|--selected-only         Skip packages not selected for install/upgrade.
+  -E|--skip-same-version     Skip packages whose same version is installed.
+  -G|--refuse-downgrade      Skip packages with earlier version than installed.
+  -B|--auto-deconfigure      Install even if it would break some other package.
+  --[no-]triggers            Skip or force consequential trigger processing.
+  --verify-format=<format>   Verify output format (supported: 'rpm').
+  --no-debsig                Do not try to verify package signatures.
+  --no-act|--dry-run|--simulate
+                             Just say what we would do - don't do it.
+  -D|--debug=<octal>         Enable debugging (see -Dhelp or --debug=help).
+  --status-fd <n>            Send status change updates to file descriptor <n>.
+  --status-logger=<command>  Send status change updates to <command>'s stdin.
+  --log=<filename>           Log status changes and actions to <filename>.
+  --ignore-depends=<package>,...
+                             Ignore dependencies involving <package>.
+  --force-...                Override problems (see --force-help).
+  --no-force-...|--refuse-...
+                             Stop when problems encountered.
+  --abort-after <n>          Abort after encountering <n> errors.
+
+Comparison operators for --compare-versions are:
+  lt le eq ne ge gt       (treat empty version as earlier than any version);
+  lt-nl le-nl ge-nl gt-nl (treat empty version as later than any version);
+  < << <= = >= >> >       (only for compatibility with control file syntax).
+
+Use 'apt' or 'aptitude' for user-friendly package management.
+jdebettencourt:~/workspace/code/code.intro (master) $ find *.h
+common.h
+jdebettencourt:~/workspace/code/code.intro (master) $ cd ~
+jdebettencourt:~ $ pwd
+/home/ubuntu
+jdebettencourt:~ $ find *.h
+find: `*.h': No such file or directory
+jdebettencourt:~ $ cd ..
+jdebettencourt:/home $ cd .
+jdebettencourt:/home $ cd ..
+jdebettencourt:/ $ pwd
+/
+jdebettencourt:/ $ find *.h
+find: `*.h': No such file or directory
+jdebettencourt:/ $ find '*.h'
+find: `*.h': No such file or directory
+jdebettencourt:/ $ 
+jdebettencourt:/ $ cd ~
+jdebettencourt:~ $ pwd
+/home/ubuntu
+jdebettencourt:~ $ ls -al
+total 96
+drwxr-xr-x 18 ubuntu ubuntu 4096 Apr  4 17:07 ./
+drwxr-xr-x 15 root   root   4096 Apr  4 17:07 ../
+-rw-r--r--  1 ubuntu ubuntu  314 Nov  1 05:45 .bash_aliases
+-rw-r--r--  1 ubuntu ubuntu  220 Apr  9  2014 .bash_logout
+-rw-r--r--  1 ubuntu ubuntu 1651 Nov  1 05:45 .bashrc
+drwxr-xr-x  4 ubuntu ubuntu 4096 Apr 11 18:49 .c9/
+drwxr-xr-x  3 ubuntu ubuntu 4096 Nov  1 05:59 .cache/
+drwxr-xr-x  3 ubuntu ubuntu 4096 Nov  1 05:59 .config/
+drwxrwxr-x  3 ubuntu ubuntu 4096 Nov  1 05:58 .gem/
+-rw-r--r--  1 ubuntu ubuntu   52 Nov  1 05:45 .gemrc
+-rw-r--r--  1 ubuntu ubuntu  240 Apr  4 17:07 .gitconfig
+-rw-r--r--  1 ubuntu ubuntu  494 Nov  1 05:45 .gitignore
+drwx------  2 ubuntu ubuntu 4096 Nov  1 05:57 .gnupg/
+drwxr-xr-x  2 ubuntu ubuntu 4096 Nov  1 05:59 .heroku/
+-rw-r--r--  1 ubuntu ubuntu  494 Nov  1 05:59 .hgignore
+-rw-r--r--  1 ubuntu ubuntu   79 Apr  4 17:07 .hgrc
+drwxr-xr-x  3 ubuntu ubuntu 4096 Nov  1 05:59 .local/
+-rw-------  1 ubuntu ubuntu   15 Nov  1 05:48 .npmrc
+drwxr-xr-x  7 ubuntu ubuntu 4096 Nov  1 05:48 .nvm/
+-rw-r--r--  1 ubuntu ubuntu 1258 Apr  4 17:07 .profile
+-rw-r--r--  1 ubuntu ubuntu  860 Nov  1 05:48 .profileE
+drwxr-xr-x  2 ubuntu ubuntu 4096 Apr 11 18:49 .ssh/
+drwxr-xr-x  3 ubuntu ubuntu 4096 Nov  1 05:59 lib/
+drwxrwxr-x  4 ubuntu ubuntu 4096 Apr  4 17:11 workspace/
+jdebettencourt:~ $ cd workspace
+jdebettencourt:~/workspace $ nvm --help
+
+Node Version Manager
+
+Note: <version> refers to any version-like string nvm understands. This includes:
+  - full or partial version numbers, starting with an optional "v" (0.10, v0.1.2, v1)
+  - default (built-in) aliases: node, stable, unstable, iojs, system
+  - custom aliases you define with `nvm alias foo`
+
+Usage:
+  nvm help                                  Show this message
+  nvm --version                             Print out the latest released version of nvm
+  nvm install [-s] <version>                Download and install a <version>, [-s] from source. Uses .nvmrc if available
+    --reinstall-packages-from=<version>     When installing, reinstall packages installed in <node|iojs|node version number>
+  nvm uninstall <version>                   Uninstall a version
+  nvm use [--silent] <version>              Modify PATH to use <version>. Uses .nvmrc if available
+  nvm exec [--silent] <version> [<command>] Run <command> on <version>. Uses .nvmrc if available
+  nvm run [--silent] <version> [<args>]     Run `node` on <version> with <args> as arguments. Uses .nvmrc if available
+  nvm current                               Display currently activated version
+  nvm ls                                    List installed versions
+  nvm ls <version>                          List versions matching a given description
+  nvm ls-remote                             List remote versions available for install
+  nvm version <version>                     Resolve the given description to a single local version
+  nvm version-remote <version>              Resolve the given description to a single remote version
+  nvm deactivate                            Undo effects of `nvm` on current shell
+  nvm alias [<pattern>]                     Show all aliases beginning with <pattern>
+  nvm alias <name> <version>                Set an alias named <name> pointing to <version>
+  nvm unalias <name>                        Deletes the alias named <name>
+  nvm reinstall-packages <version>          Reinstall global `npm` packages contained in <version> to current version
+  nvm unload                                Unload `nvm` from shell
+  nvm which [<version>]                     Display path to installed node version. Uses .nvmrc if available
+
+Example:
+  nvm install v0.10.32                  Install a specific version number
+  nvm use 0.10                          Use the latest available 0.10.x release
+  nvm run 0.10.32 app.js                Run app.js using node v0.10.32
+  nvm exec 0.10.32 node app.js          Run `node app.js` with the PATH pointing to node v0.10.32
+  nvm alias default 0.10.32             Set default node version on a shell
+
+Note:
+  to remove, delete, or uninstall nvm - just remove the `$NVM_DIR` folder (usually `~/.nvm`)
+
+jdebettencourt:~/workspace $ nvm which
+No .nvmrc file found
+
+Node Version Manager
+
+Note: <version> refers to any version-like string nvm understands. This includes:
+  - full or partial version numbers, starting with an optional "v" (0.10, v0.1.2, v1)
+  - default (built-in) aliases: node, stable, unstable, iojs, system
+  - custom aliases you define with `nvm alias foo`
+
+Usage:
+  nvm help                                  Show this message
+  nvm --version                             Print out the latest released version of nvm
+  nvm install [-s] <version>                Download and install a <version>, [-s] from source. Uses .nvmrc if available
+    --reinstall-packages-from=<version>     When installing, reinstall packages installed in <node|iojs|node version number>
+  nvm uninstall <version>                   Uninstall a version
+  nvm use [--silent] <version>              Modify PATH to use <version>. Uses .nvmrc if available
+  nvm exec [--silent] <version> [<command>] Run <command> on <version>. Uses .nvmrc if available
+  nvm run [--silent] <version> [<args>]     Run `node` on <version> with <args> as arguments. Uses .nvmrc if available
+  nvm current                               Display currently activated version
+  nvm ls                                    List installed versions
+  nvm ls <version>                          List versions matching a given description
+  nvm ls-remote                             List remote versions available for install
+  nvm version <version>                     Resolve the given description to a single local version
+  nvm version-remote <version>              Resolve the given description to a single remote version
+  nvm deactivate                            Undo effects of `nvm` on current shell
+  nvm alias [<pattern>]                     Show all aliases beginning with <pattern>
+  nvm alias <name> <version>                Set an alias named <name> pointing to <version>
+  nvm unalias <name>                        Deletes the alias named <name>
+  nvm reinstall-packages <version>          Reinstall global `npm` packages contained in <version> to current version
+  nvm unload                                Unload `nvm` from shell
+  nvm which [<version>]                     Display path to installed node version. Uses .nvmrc if available
+
+Example:
+  nvm install v0.10.32                  Install a specific version number
+  nvm use 0.10                          Use the latest available 0.10.x release
+  nvm run 0.10.32 app.js                Run app.js using node v0.10.32
+  nvm exec 0.10.32 node app.js          Run `node app.js` with the PATH pointing to node v0.10.32
+  nvm alias default 0.10.32             Set default node version on a shell
+
+Note:
+  to remove, delete, or uninstall nvm - just remove the `$NVM_DIR` folder (usually `~/.nvm`)
+
+jdebettencourt:~/workspace $ nvm ls
+->       v4.6.1
+         system
+default -> 4 (-> v4.6.1)
+node -> stable (-> v4.6.1) (default)
+stable -> 4.6 (-> v4.6.1) (default)
+iojs -> N/A (default)
+jdebettencourt:~/workspace $ nvm install v6.10.2
+Downloading https://nodejs.org/dist/v6.10.2/node-v6.10.2-linux-x64.tar.xz...
+######################################################################## 100.0%
+Now using node v6.10.2 (npm v3.10.10)
+jdebettencourt:~/workspace $ nodejs --version
+bash: nodejs: command not found
+jdebettencourt:~/workspace $ node -v
+v6.10.2
+jdebettencourt:~/workspace $ npm -v
+3.10.10
+jdebettencourt:~/workspace $ 

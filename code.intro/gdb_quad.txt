@@ -1,0 +1,133 @@
+jdebettencourt:~/workspace $ cd code/doubler
+jdebettencourt:~/workspace/code/doubler (master) $ ls
+quad.c  repeat*  repeat.c  repeat.i  repeat.o  repeat.s  repeat_class_gdb.txt  repeat_class_ps.txt  repeatsessionlog.txt
+jdebettencourt:~/workspace/code/doubler (master) $ ls -al
+total 100
+drwxr-xr-x 2 ubuntu ubuntu  4096 Apr 11 16:01 ./
+drwxr-xr-x 5 ubuntu ubuntu  4096 Apr 11 16:06 ../
+-rw-r--r-- 1 ubuntu ubuntu   189 Apr  6 18:12 quad.c
+-rwxr-xr-x 1 ubuntu ubuntu  8522 Apr  4 17:22 repeat*
+-rw-r--r-- 1 ubuntu ubuntu   155 Apr  4 17:21 repeat.c
+-rw-r--r-- 1 ubuntu ubuntu 17229 Apr  4 17:30 repeat.i
+-rw-r--r-- 1 ubuntu ubuntu  1528 Apr  4 17:28 repeat.o
+-rw-r--r-- 1 ubuntu ubuntu   633 Apr  4 17:35 repeat.s
+-rw-r--r-- 1 ubuntu ubuntu 19224 Apr  6 18:16 repeat_class_gdb.txt
+-rw-r--r-- 1 ubuntu ubuntu 19086 Apr  6 18:16 repeat_class_ps.txt
+-rw-r--r-- 1 ubuntu ubuntu  1796 Apr  6 18:16 repeatsessionlog.txt
+jdebettencourt:~/workspace/code/doubler (master) $ gcc -o quad quad.c -Wall
+jdebettencourt:~/workspace/code/doubler (master) $ ./quad
+492
+jdebettencourt:~/workspace/code/doubler (master) $ ls -al
+total 112
+drwxr-xr-x 2 ubuntu ubuntu  4096 Apr 11 17:23 ./
+drwxr-xr-x 5 ubuntu ubuntu  4096 Apr 11 16:06 ../
+-rwxr-xr-x 1 ubuntu ubuntu  8520 Apr 11 17:23 quad*
+-rw-r--r-- 1 ubuntu ubuntu   189 Apr  6 18:12 quad.c
+-rwxr-xr-x 1 ubuntu ubuntu  8522 Apr  4 17:22 repeat*
+-rw-r--r-- 1 ubuntu ubuntu   155 Apr  4 17:21 repeat.c
+-rw-r--r-- 1 ubuntu ubuntu 17229 Apr  4 17:30 repeat.i
+-rw-r--r-- 1 ubuntu ubuntu  1528 Apr  4 17:28 repeat.o
+-rw-r--r-- 1 ubuntu ubuntu   633 Apr  4 17:35 repeat.s
+-rw-r--r-- 1 ubuntu ubuntu 19224 Apr  6 18:16 repeat_class_gdb.txt
+-rw-r--r-- 1 ubuntu ubuntu 19086 Apr  6 18:16 repeat_class_ps.txt
+-rw-r--r-- 1 ubuntu ubuntu  1796 Apr  6 18:16 repeatsessionlog.txt
+jdebettencourt:~/workspace/code/doubler (master) $ gdb
+GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+(gdb) file quad
+Reading symbols from quad...(no debugging symbols found)...done.
+(gdb) info file
+Symbols from "/home/ubuntu/workspace/code/doubler/quad".
+Local exec file:
+        `/home/ubuntu/workspace/code/doubler/quad', file type elf64-x86-64.
+        Entry point: 0x400440
+        0x0000000000400238 - 0x0000000000400254 is .interp
+        0x0000000000400254 - 0x0000000000400274 is .note.ABI-tag
+        0x0000000000400274 - 0x0000000000400298 is .note.gnu.build-id
+        0x0000000000400298 - 0x00000000004002b4 is .gnu.hash
+        0x00000000004002b8 - 0x0000000000400318 is .dynsym
+        0x0000000000400318 - 0x0000000000400357 is .dynstr
+        0x0000000000400358 - 0x0000000000400360 is .gnu.version
+        0x0000000000400360 - 0x0000000000400380 is .gnu.version_r
+        0x0000000000400380 - 0x0000000000400398 is .rela.dyn
+        0x0000000000400398 - 0x00000000004003e0 is .rela.plt
+        0x00000000004003e0 - 0x00000000004003fa is .init
+        0x0000000000400400 - 0x0000000000400440 is .plt
+        0x0000000000400440 - 0x00000000004005f2 is .text
+        0x00000000004005f4 - 0x00000000004005fd is .fini
+        0x0000000000400600 - 0x0000000000400609 is .rodata
+        0x000000000040060c - 0x0000000000400640 is .eh_frame_hdr
+        0x0000000000400640 - 0x0000000000400734 is .eh_frame
+        0x0000000000600e10 - 0x0000000000600e18 is .init_array
+        0x0000000000600e18 - 0x0000000000600e20 is .fini_array
+        0x0000000000600e20 - 0x0000000000600e28 is .jcr
+        0x0000000000600e28 - 0x0000000000600ff8 is .dynamic
+        0x0000000000600ff8 - 0x0000000000601000 is .got
+        0x0000000000601000 - 0x0000000000601030 is .got.plt
+        0x0000000000601030 - 0x0000000000601040 is .data
+        0x0000000000601040 - 0x0000000000601048 is .bss
+(gdb) b *0x400440
+Breakpoint 1 at 0x400440
+(gdb) run
+Starting program: /home/ubuntu/workspace/code/doubler/quad
+
+Breakpoint 1, 0x0000000000400440 in _start ()
+(gdb) x/16i
+Argument required (starting display address).
+(gdb) x/16i $pc
+=> 0x400440 <_start>:   xor    %ebp,%ebp
+   0x400442 <_start+2>: mov    %rdx,%r9
+   0x400445 <_start+5>: pop    %rsi
+   0x400446 <_start+6>: mov    %rsp,%rdx
+   0x400449 <_start+9>: and    $0xfffffffffffffff0,%rsp
+   0x40044d <_start+13>:        push   %rax
+   0x40044e <_start+14>:        push   %rsp
+   0x40044f <_start+15>:        mov    $0x4005f0,%r8
+   0x400456 <_start+22>:        mov    $0x400580,%rcx
+   0x40045d <_start+29>:        mov    $0x40052d,%rdi
+   0x400464 <_start+36>:        callq  0x400420 <__libc_start_main@plt>
+   0x400469 <_start+41>:        hlt    
+   0x40046a <_start+42>:        nopw   0x0(%rax,%rax,1)
+   0x400470 <deregister_tm_clones>:     mov    $0x601047,%eax
+   0x400475 <deregister_tm_clones+5>:   push   %rbp
+   0x400476 <deregister_tm_clones+6>:   sub    $0x601040,%rax
+(gdb) b *0x40052d
+Breakpoint 2 at 0x40052d
+(gdb) c
+Continuing.
+
+Breakpoint 2, 0x000000000040052d in main ()
+(gdb) x/16i $pc                                                                                                                                     
+=> 0x40052d <main>:     push   %rbp
+   0x40052e <main+1>:   mov    %rsp,%rbp
+   0x400531 <main+4>:   sub    $0x10,%rsp
+   0x400535 <main+8>:   movl   $0x7b,-0x8(%rbp)
+   0x40053c <main+15>:  movl   $0x0,-0x4(%rbp)
+   0x400543 <main+22>:  mov    -0x8(%rbp),%eax
+   0x400546 <main+25>:  add    %eax,-0x4(%rbp)
+   0x400549 <main+28>:  mov    -0x8(%rbp),%eax
+   0x40054c <main+31>:  add    %eax,-0x4(%rbp)
+   0x40054f <main+34>:  mov    -0x8(%rbp),%eax
+   0x400552 <main+37>:  add    %eax,-0x4(%rbp)
+   0x400555 <main+40>:  mov    -0x8(%rbp),%eax
+   0x400558 <main+43>:  add    %eax,-0x4(%rbp)
+   0x40055b <main+46>:  mov    -0x4(%rbp),%eax
+   0x40055e <main+49>:  mov    %eax,%esi
+   0x400560 <main+51>:  mov    $0x400604,%edi
+(gdb) c
+Continuing.
+492
+[Inferior 1 (process 5326) exited normally]
+(gdb) 
