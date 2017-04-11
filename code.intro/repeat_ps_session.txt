@@ -1,0 +1,79 @@
+jdebettencourt:~/workspace $ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0   1108     0 ?        Ss   Apr04   0:04 /mnt/shared/sbin/tini -- /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbear -i -s -m -R
+root           7  0.0  0.0   4056   192 ?        S+   Apr04   0:00 /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbear -i -s -m -R
+ubuntu       965  0.0  0.0 132712  2516 ?        Rs   Apr04   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_822 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu       970  0.0  0.0  11252  2116 pts/1    Ss   Apr04   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu       973  0.0  0.0  29072 11972 pts/1    S    Apr04   0:00 bash -l
+root        3774  0.0  0.0  19380  2272 ?        Ss   15:22   0:00 /mnt/shared/sbin/dropbear -i -s -m -R
+ubuntu      3775  0.1  0.0 1252384 49048 ?       Sl   15:22   0:01 vfs-worker {"pingInterval":5000,"nodePath":"/mnt/shared/lib/node_modules","tmuxBin":"/mnt/shared/sbin/tmux","root":"/","debug":true,"connectionTimeout":
+ubuntu      3865  0.0  0.0 123740  2764 pts/0    Ss+  15:22   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 attach -t jdebettencourt@it373try2_822 -d
+ubuntu      4657  0.0  0.0  58252 27832 pts/1    S+   15:22   0:00 gdb
+ubuntu      4665  0.0  0.0   4196   652 pts/1    t    15:27   0:00 /home/ubuntu/workspace/code/repeat
+ubuntu      4716  0.0  0.0 123740  2708 pts/2    Ss+  15:48   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_200 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu      4718  0.0  0.0  11252  2560 pts/3    Ss   15:48   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      4719  1.5  0.0  29024 12776 pts/3    S    15:48   0:00 bash -l
+ubuntu      5165  0.0  0.0  17256  2504 pts/3    R+   15:48   0:00 ps aux
+jdebettencourt:~/workspace $ pmap/4665/maps/cat
+bash: pmap/4665/maps/cat: No such file or directory
+jdebettencourt:~/workspace $ pmap/4665/maps
+bash: pmap/4665/maps: No such file or directory
+jdebettencourt:~/workspace $ cat/proc/4665/maps
+bash: cat/proc/4665/maps: No such file or directory
+jdebettencourt:~/workspace $ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0   1108     0 ?        Ss   Apr04   0:04 /mnt/shared/sbin/tini -- /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbear -i -s -m -R
+root           7  0.0  0.0   4056   236 ?        S+   Apr04   0:00 /mnt/shared/sbin/micro-inetd 22 /mnt/shared/sbin/dropbear -i -s -m -R
+ubuntu       965  0.0  0.0 132712  2516 ?        Rs   Apr04   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_822 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu       970  0.0  0.0  11252  2116 pts/1    Ss   Apr04   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu       973  0.0  0.0  29072 11972 pts/1    S    Apr04   0:00 bash -l
+root        3774  0.0  0.0  19380  2272 ?        Rs   15:22   0:00 /mnt/shared/sbin/dropbear -i -s -m -R
+ubuntu      3775  0.1  0.0 1252384 48752 ?       Rl   15:22   0:02 vfs-worker {"pingInterval":5000,"nodePath":"/mnt/shared/lib/node_modules","tmuxBin":"/mnt/shared/sbin/tmux","root":"/","debug":true,"connectionTimeout":
+ubuntu      3865  0.0  0.0 123740  2764 pts/0    Ss+  15:22   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 attach -t jdebettencourt@it373try2_822 -d
+ubuntu      4657  0.0  0.0  58252 27832 pts/1    S+   15:22   0:00 gdb
+ubuntu      4665  0.0  0.0   4196   652 pts/1    t    15:27   0:00 /home/ubuntu/workspace/code/repeat
+ubuntu      4716  0.0  0.0 123740  2708 pts/2    Ss+  15:48   0:00 /mnt/shared/sbin/tmux -u2 -L cloud92.2 new -s jdebettencourt@it373try2_200 export ISOUTPUTPANE=0;bash -l ; set -q -g status off ; set -q destroy-unattac
+ubuntu      4718  0.0  0.0  11252  2560 pts/3    Ss   15:48   0:00 bash -c export ISOUTPUTPANE=0;bash -l
+ubuntu      4719  0.0  0.0  29024 12804 pts/3    S    15:48   0:00 bash -l
+ubuntu      5190  0.0  0.0  17256  2396 pts/3    R+   15:51   0:00 ps aux
+jdebettencourt:~/workspace $ pmap 4665
+4665:   /home/ubuntu/workspace/code/repeat
+0000000000400000      4K r-x-- repeat
+0000000000600000      4K r---- repeat
+0000000000601000      4K rw--- repeat
+00007ffff7a15000   1768K r-x-- libc-2.19.so
+00007ffff7bcf000   2048K ----- libc-2.19.so
+00007ffff7dcf000     16K r---- libc-2.19.so
+00007ffff7dd3000      8K rw--- libc-2.19.so
+00007ffff7dd5000     20K rw---   [ anon ]
+00007ffff7dda000    140K r-x-- ld-2.19.so
+00007ffff7fe4000     12K rw---   [ anon ]
+00007ffff7ff6000      8K rw---   [ anon ]
+00007ffff7ff8000      8K r----   [ anon ]
+00007ffff7ffa000      8K r-x--   [ anon ]
+00007ffff7ffc000      4K r---- ld-2.19.so
+00007ffff7ffd000      4K rw--- ld-2.19.so
+00007ffff7ffe000      4K rw---   [ anon ]
+00007ffffffde000    132K rw---   [ stack ]
+ffffffffff600000      4K r-x--   [ anon ]
+ total             4196K
+jdebettencourt:~/workspace $ cat /proc/4665/maps
+00400000-00401000 r-xp 00000000 00:9fe 997                               /home/ubuntu/workspace/code/repeat
+00600000-00601000 r--p 00000000 00:9fe 997                               /home/ubuntu/workspace/code/repeat
+00601000-00602000 rw-p 00001000 00:9fe 997                               /home/ubuntu/workspace/code/repeat
+7ffff7a15000-7ffff7bcf000 r-xp 00000000 00:9fe 80                        /lib/x86_64-linux-gnu/libc-2.19.so
+7ffff7bcf000-7ffff7dcf000 ---p 001ba000 00:9fe 80                        /lib/x86_64-linux-gnu/libc-2.19.so
+7ffff7dcf000-7ffff7dd3000 r--p 001ba000 00:9fe 80                        /lib/x86_64-linux-gnu/libc-2.19.so
+7ffff7dd3000-7ffff7dd5000 rw-p 001be000 00:9fe 80                        /lib/x86_64-linux-gnu/libc-2.19.so
+7ffff7dd5000-7ffff7dda000 rw-p 00000000 00:00 0 
+7ffff7dda000-7ffff7dfd000 r-xp 00000000 00:9fe 73                        /lib/x86_64-linux-gnu/ld-2.19.so
+7ffff7fe4000-7ffff7fe7000 rw-p 00000000 00:00 0 
+7ffff7ff6000-7ffff7ff8000 rw-p 00000000 00:00 0 
+7ffff7ff8000-7ffff7ffa000 r--p 00000000 00:00 0                          [vvar]
+7ffff7ffa000-7ffff7ffc000 r-xp 00000000 00:00 0                          [vdso]
+7ffff7ffc000-7ffff7ffd000 r--p 00022000 00:9fe 73                        /lib/x86_64-linux-gnu/ld-2.19.so
+7ffff7ffd000-7ffff7ffe000 rw-p 00023000 00:9fe 73                        /lib/x86_64-linux-gnu/ld-2.19.so
+7ffff7ffe000-7ffff7fff000 rw-p 00000000 00:00 0 
+7ffffffde000-7ffffffff000 rw-p 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+jdebettencourt:~/workspace $ 
